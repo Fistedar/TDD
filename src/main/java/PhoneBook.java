@@ -17,11 +17,15 @@ public class PhoneBook {
     public String findByName(String name) {
         Set<Map.Entry<String, String>> entrySet = phoneBook.entrySet();
         String phoneNumber = null;
-        for (Map.Entry<String, String> nameNumber : entrySet){
-            if (name.equals(nameNumber.getValue())){
+        for (Map.Entry<String, String> nameNumber : entrySet) {
+            if (name.equals(nameNumber.getValue())) {
                 phoneNumber = nameNumber.getKey();
             }
         }
         return phoneNumber;
+    }
+
+    public String printAllNames() {
+        return phoneBook.keySet().toString();
     }
 }
