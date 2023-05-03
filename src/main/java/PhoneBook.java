@@ -1,4 +1,5 @@
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 public class PhoneBook {
@@ -13,7 +14,14 @@ public class PhoneBook {
         return phoneBook.get(name);
     }
 
-    public String findByName(String num) {
-        return null;
+    public String findByName(String name) {
+        Set<Map.Entry<String, String>> entrySet = phoneBook.entrySet();
+        String phoneNumber = null;
+        for (Map.Entry<String, String> nameNumber : entrySet){
+            if (name.equals(nameNumber.getValue())){
+                phoneNumber = nameNumber.getKey();
+            }
+        }
+        return phoneNumber;
     }
 }
